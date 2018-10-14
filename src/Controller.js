@@ -7,6 +7,7 @@ export default class Controller extends Component {
     this.state = {
       color: "",
       width: "",
+      opacity: "",
       toDraw: []
     };
     this.onSubmit = this.onSubmit.bind(this);
@@ -17,7 +18,8 @@ export default class Controller extends Component {
     evt.preventDefault();
     const newShape = {
       color: this.state.color,
-      width: this.state.width
+      width: this.state.width,
+      opacity: this.state.opacity
     };
     this.setState({ toDraw: [...this.state.toDraw, newShape] });
   }
@@ -44,6 +46,17 @@ export default class Controller extends Component {
             <option value="green"> Green </option>
             <option value="blue"> Blue </option>
             <option value="purple"> Purple </option>
+          </select>
+          <select name="opacity" onChange={this.onChange}>
+            <option disabled selected="selected" value="">
+              {" "}
+              Choose Opacity{" "}
+            </option>
+            <option value=".2">.2</option>
+            <option value=".4">.4</option>
+            <option value=".6">.6</option>
+            <option value=".8">.8</option>
+            <option value="1">1</option>
           </select>
           <label> How big: </label>
           <input name="width" onChange={this.onChange} />

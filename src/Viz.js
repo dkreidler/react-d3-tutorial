@@ -31,6 +31,7 @@ export default class Viz extends Component {
       document.documentElement.clientHeight,
       window.innerHeight || 0
     );
+
     d3.select(".viz")
       .append("svg")
       .attr("height", h)
@@ -68,7 +69,8 @@ export default class Viz extends Component {
       .enter()
       .append("svg:circle")
       .attr("r", d => d.width / 2 + "px")
-      .style("fill", d => (d.color ? d.color : "purple"));
+      .style("fill", d => (d.color ? d.color : "purple"))
+      .style("opacity", d => (d.opacity ? d.opacity : ".2"));
 
     simulation.nodes(props.shapes).on("tick", ticked);
 
