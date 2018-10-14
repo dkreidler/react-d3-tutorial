@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import * as d3 from "d3";
 
 export default class Viz extends Component {
@@ -18,6 +18,10 @@ export default class Viz extends Component {
       this.draw(nextProps);
     }
   }
+  render() {
+    return <div className="viz" />;
+  }
+
   draw(props) {
     const w = Math.max(
       document.documentElement.clientWidth,

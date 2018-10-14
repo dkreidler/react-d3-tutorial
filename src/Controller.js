@@ -23,25 +23,31 @@ export default class Controller extends Component {
   }
 
   onChange(evt) {
-    this.setState({ [evt.target.name]: evt.target.value });
+    this.setState({
+      [evt.target.name]: evt.target.value
+    });
   }
 
   render() {
     return (
       <div className="controller">
         <form onSubmit={this.onSubmit}>
-          <label>pick a color:</label>
+          <label> Pick a color: </label>
           <select name="color" onChange={this.onChange}>
             <option disabled selected="selected" value="">
-              choose
+              {" "}
+              Choose{" "}
             </option>
-            <option value="red">red</option>
-            <option value="orange">orange</option>
-            <option value="yellow">yellow</option>
+            <option value="red"> Red </option>
+            <option value="orange"> Orange </option>
+            <option value="yellow"> Yellow </option>
+            <option value="green"> Green </option>
+            <option value="blue"> Blue </option>
+            <option value="purple"> Purple </option>
           </select>
-          <label>how big:</label>
+          <label> How big: </label>
           <input name="width" onChange={this.onChange} />
-          <button type="submit">draw!</button>
+          <button type="submit"> Draw! </button>
         </form>
         {this.state.toDraw.length ? <Viz shapes={this.state.toDraw} /> : null}
       </div>
