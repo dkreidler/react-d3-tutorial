@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Viz from "./Viz.js";
+import colorPicker from "./ColorPicker.js";
 
 export default class Controller extends Component {
   constructor() {
@@ -35,10 +36,12 @@ export default class Controller extends Component {
       <div className="controller">
         <form onSubmit={this.onSubmit}>
           <label> Pick a color: </label>
+          <colorPicker />
           <select name="color" onChange={this.onChange}>
+            {/* TODO: insert color picker */}
             <option disabled selected="selected" value="">
               {" "}
-              Choose{" "}
+              Color{" "}
             </option>
             <option value="red"> Red </option>
             <option value="orange"> Orange </option>
@@ -47,10 +50,12 @@ export default class Controller extends Component {
             <option value="blue"> Blue </option>
             <option value="purple"> Purple </option>
           </select>
+          <label> Choose opacity: </label>
           <select name="opacity" onChange={this.onChange}>
+            {/* TODO: insert opacity slider */}
             <option disabled selected="selected" value="">
               {" "}
-              Choose Opacity{" "}
+              Opacity{" "}
             </option>
             <option value=".2">.2</option>
             <option value=".4">.4</option>

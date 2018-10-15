@@ -7,6 +7,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+          {/* Insert DK logo */}
           <h1 className="App-title">Welcome to React and D3</h1>
         </header>
         <Controller />
