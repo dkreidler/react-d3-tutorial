@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { SliderPicker } from "react-color";
 
-export default class colorPicker extends Component {
+export default class ColorPicker extends Component {
   state = {
     color: "#000"
   };

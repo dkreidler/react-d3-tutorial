@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Viz from "./Viz.js";
-import colorPicker from "./ColorPicker.js";
+import ColorPicker from "./ColorPicker.js";
 
 export default class Controller extends Component {
   constructor() {
@@ -36,7 +36,7 @@ export default class Controller extends Component {
       <div className="controller">
         <form onSubmit={this.onSubmit}>
           <label> Pick a color: </label>
-          <colorPicker />
+          <ColorPicker />
           <select name="color" onChange={this.onChange}>
             {/* TODO: insert color picker */}
             <option disabled selected="selected" value="">
