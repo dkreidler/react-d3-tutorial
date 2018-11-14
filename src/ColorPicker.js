@@ -1,16 +1,30 @@
 import React, { Component } from "react";
-import { SliderPicker } from "react-color";
+import { PhotoshopPicker } from "react-color";
 
 export default class ColorPicker extends Component {
-  state = {
-    color: "#000"
-  };
-
-  handleChangeComplete = color => {
+  // handleChange(color, event) {
+  onChangeComplete = color => {
     this.setState({ color: color.hex });
   };
 
+  // color = {
+  //   hex: '#333',
+  //   rgb: {
+  //     r: 51,
+  //     g: 51,
+  //     b: 51,
+  //     a: 1,
+  //   },
+  //   hsl: {
+  //     h: 0,
+  //     s: 0,
+  //     l: .20,
+  //     a: 1,
+  //   },
+  // }
+  // }
+
   render() {
-    return <SliderPicker onChangeComplete={this.handleChangeComplete} />;
+    return <PhotoshopPicker onChangeComplete={this.onChange} />;
   }
 }
